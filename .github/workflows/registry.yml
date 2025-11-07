@@ -15,8 +15,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      # ✅ add deps
-      - run: npm i ajv ajv-formats
+      # 👇 force-install into the repo root
+      - run: npm init -y
+      - run: npm i ajv@8.17.1 ajv-formats@3.0.1 --no-audit --no-fund --prefix .
+      # 👇 sanity check that node_modules exists where we expect
+      - run: |
+          pwd
+          ls -la
+          ls -la node_modules || true
       - run: node scripts/validate.mjs
 
   format-on-main:
@@ -27,8 +33,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      # ✅ add deps (if format.mjs needs anything)
-      - run: npm i ajv ajv-formats
+      - run: npm init -y
+      - run: npm i ajv@8.17.1 ajv-formats@3.0.1 --no-audit --no-fund --prefix .
       - run: node scripts/format.mjs
       - name: Commit formatted file
         run: |
