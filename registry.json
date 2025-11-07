@@ -7,14 +7,14 @@
       "symbol": "BUNC",
       "name": "Bunnie Cash Coin",
       "decimals": 9,
-      "mint_authority": "nova1yyyyyyyy...yyyyy",
+      "mint_authority": "nova1s4n7pul6xzn59xvny6f5vsk8enfk3lt58nkm4qxmjedk2tlp2a9qmhuvt5",
       "logo": "https://raw.githubusercontent.com/nova-chain/token-registry/main/images/BUNC.png"
     },
     {
       "symbol": "LOG",
       "name": "LOG Coin",
       "decimals": 9,
-      "mint_authority": "nova1xxxxxxxx...xxxxx",
+      "mint_authority": "nova1avj5khwkjlntun8v3kchc55tpx4hfwfccxj4kh9syke4muhy6ukspdukjw",
       "logo": "https://raw.githubusercontent.com/nova-chain/token-registry/main/images/LOG.png",
       "uri": "https://docs.nova-chain.org/tokens/LOG",
       "extensions": {
@@ -22,6 +22,13 @@
         "website": "https://nova-chain.org",
         "twitter": "https://x.com/novachain"
       }
+    },
+    {
+      "symbol": "POL",
+      "name": "Polygon",
+      "decimals": 9,
+      "mint_authority": "nova1s4n7pul6xzn59xvny6f5vsk8enfk3lt58nkm4qxmjedk2tlp2a9qmhuvt5",
+      "logo": "https://altcoinsbox.com/wp-content/uploads/2023/03/matic-logo.png"
     }
   ]
 }
