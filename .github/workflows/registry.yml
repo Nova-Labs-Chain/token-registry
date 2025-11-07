@@ -2,10 +2,10 @@ name: Token Registry CI
 
 on:
   pull_request:
-    paths: ["registry.json", "registry.schema.json", "scripts/**", ".github/workflows/**", "package.json"]
+    paths: ["registry.json", "scripts/**", ".github/workflows/**"]
   push:
     branches: [ main ]
-    paths: ["registry.json", "registry.schema.json", "scripts/**", ".github/workflows/**", "package.json"]
+    paths: ["registry.json", "scripts/**", ".github/workflows/**"]
 
 jobs:
   validate:
@@ -15,9 +15,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - run: npm ci || npm install
-      - run: npm run validate
+      - run: node scripts/validate.mjs
 
   format-on-main:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -27,9 +25,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - run: npm ci || npm install
-      - run: npm run format
+      - run: node scripts/format.mjs
       - name: Commit formatted file
         run: |
           git config user.name "Nova Registry Bot"
