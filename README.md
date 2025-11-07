@@ -1,5 +1,8 @@
 # 🪙 NovaChain Token Registry
 
+[![Token Registry CI](https://github.com/Nova-Labs-Chain/token-registry/actions/workflows/registry.yml/badge.svg)](https://github.com/Nova-Labs-Chain/token-registry/actions)
+
+
 A community-maintained registry of all verified **TokenX-v1** assets on the NovaChain blockchain, developed by **NovaLabs**.
 
 This repository contains a single [`registry.json`](./registry.json) file listing **every token** on NovaChain Mainnet and Testnet. Wallets, explorers, and DEX frontends can use this file to display token names, logos, and metadata consistently.
