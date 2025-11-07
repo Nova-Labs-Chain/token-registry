@@ -2,10 +2,19 @@ name: Token Registry CI
 
 on:
   pull_request:
-    paths: ["registry.json", "scripts/**", ".github/workflows/**"]
+    paths:
+      - "registry.json"
+      - "scripts/**"
+      - ".github/workflows/**"
   push:
     branches: [ main ]
-    paths: ["registry.json", "scripts/**", ".github/workflows/**"]
+    paths:
+      - "registry.json"
+      - "scripts/**"
+      - ".github/workflows/**"
+
+permissions:
+  contents: write
 
 jobs:
   validate:
