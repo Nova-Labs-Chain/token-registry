@@ -1,0 +1,13 @@
+{
+  "name": "nova-token-registry",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "format": "node scripts/format.mjs || true"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}
