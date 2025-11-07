@@ -1,0 +1,33 @@
+name: Token Registry CI
+
+on:
+  pull_request:
+    paths: ["registry.json", "registry.schema.json", "scripts/**"]
+  push:
+    branches: [ main ]
+    paths: ["registry.json"]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node scripts/validate.mjs
+
+  format-on-main:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node scripts/format.mjs
+      - name: Commit formatted file
+        run: |
+          git config user.name "Nova Registry Bot"
+          git config user.email "bot@nova-chain.org"
+          git add registry.json
+          git commit -m "chore: format registry.json" || echo "no changes"
+          git push
